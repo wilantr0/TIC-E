@@ -1,65 +1,90 @@
 import time as time
 import os as os
-print('-------------------------------------------------------------------------------------------------------------')
-print('Hola benvingut a aquesta calculadora. No és una calculadora normal, et permet fer operacions de combinatòria.')
-print('-------------------------------------------------------------------------------------------------------------')
+
+print(
+    "-------------------------------------------------------------------------------------------------------------"
+)
+print(
+    "Hola benvingut a aquesta calculadora. No és una calculadora normal, et permet fer operacions de combinatòria."
+)
+print(
+    "-------------------------------------------------------------------------------------------------------------"
+)
 time.sleep(3)
-os.system('cls')
+os.system("cls")
 
 
 def factorial(n):
-    return 1 if (n == 1 or n == 0) else n*factorial(n-1) 
+    return 1 if (n == 1 or n == 0) else n * factorial(n - 1)
+
+
+def Perm(m):
+    return factorial(m)
+
+
+def PermR(m):
+    repes = input("Num elements repetits: ").split(", ")
+    print(" ")
+
+    for i in range(len(repes)):
+        factos *= factorial(int(repes[i]))
+
+    return factorial(m) / factos
+
+
+def Var(m, n):
+    return factorial(m) / factorial(m - n)
+
+
+def VarR(m, n):
+    return m**n
+
+
+def Comb(m, n):
+    return factorial(m) / (factorial(n) * factorial(m - n))
 
 
 def comb():
-    m = int(input('Quants elements tenim: '))
-    print(' ')
-    n = int(input('Quants elements agafem del total? '))
-    print(' ')
+    m = int(input("Quants elements tenim: "))
+    print(" ")
+    n = int(input("Quants elements agafem del total? "))
+    print(" ")
 
     if m > n and n > 0:
         ordre = input("Importa l'ordre? ").upper()
-        print(' ')
+        print(" ")
 
-        if ordre == 'SI':
-            repe = input('Es repeteixen els elements? ').upper()
-            print(' ')
+        if ordre == "SI":
+            repe = input("Es repeteixen els elements? ").upper()
+            print(" ")
 
-            if repe == 'SI':
-                print('Surten un màxim de ' + m**n + ' combinacions')
-            elif repe == 'NO':
-                print(
-                    f'Surten un màxim de {factorial(m)/factorial(m-n)} combinacions')
+            if repe == "SI":
+                print("Surten un màxim de " + VarR(m, n) + " combinacions")
+            elif repe == "NO":
+                print(f"Surten un màxim de {Var(m, n)} combinacions")
             else:
-                print('Error en la presa de resposta... \n')
+                print("Error en la presa de resposta... \n")
                 comb()
-        elif ordre == 'NO':
-            print(
-                f'Surten un màxim de {factorial(m)/(factorial(n)*factorial(m-n))} combinacions')
+        elif ordre == "NO":
+            print(f"Surten un màxim de {Comb(m, n)} combinacions")
         else:
-            print('Error a la presa de resposta... \n')
+            print("Error a la presa de resposta... \n")
             comb()
     elif n == m:
-        repe = input('Es repeteixen els elements? ').upper()
-        print(' ')
+        repe = input("Es repeteixen els elements? ").upper()
+        print(" ")
         factos = 1
-        if repe == 'SI':
-            repes = input('Num elements repetits: ').split(', ')
-            print(' ')
-
-            for i in range(len(repes)):
-                factos *= factorial(int(repes[i]))
-
-            print(f'Surten un màxim de {factorial(m)/factos} combinacions')
-        elif repe == 'NO':
-            print(f'Surten un màxim de {factorial(m)} combinacions')
+        if repe == "SI":
+            print(f"Surten un màxim de {PermR(m)} combinacions")
+        elif repe == "NO":
+            print(f"Surten un màxim de {Perm(m)} combinacions")
         else:
-            print('Error en la presa de resposta... \n')
+            print("Error en la presa de resposta... \n")
             comb()
 
-    cont = input('Vols continuar? ').upper()
+    cont = input("Vols continuar? ").upper()
 
-    if cont == 'SI':
+    if cont == "SI":
         comb()
     else:
         pass
