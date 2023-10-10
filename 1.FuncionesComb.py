@@ -1,16 +1,6 @@
 import time as time
 import os as os
 
-print(
-    "-------------------------------------------------------------------------------------------------------------"
-)
-print(
-    "Hola benvingut a aquesta calculadora. No és una calculadora normal, et permet fer operacions de combinatòria."
-)
-print(
-    "-------------------------------------------------------------------------------------------------------------"
-)
-time.sleep(3)
 os.system("cls")
 
 
@@ -23,13 +13,16 @@ def Perm(m):
 
 
 def PermR(m):
-    repes = input("Num elements repetits: ").split(", ")
-    print(" ")
+    num = m[0]
+    perm = 0
 
-    for i in range(len(repes)):
-        factos *= factorial(int(repes[i]))
+    for i in range(len(m)):
+        if i == 0:
+            pass
+        else:
+            perm += factorial(m[i])
 
-    return factorial(m) / factos
+    return factorial(num) / perm
 
 
 def Var(m, n):
@@ -73,9 +66,15 @@ def comb():
     elif n == m:
         repe = input("Es repeteixen els elements? ").upper()
         print(" ")
-        factos = 1
+        reps = [m]
         if repe == "SI":
-            print(f"Surten un màxim de {PermR(m)} combinacions")
+            rep = int(input("Cuantos elementos se repiten? "))
+            for i in range(rep):
+                ns = int(
+                    input("Cuantas veces se repite el elemento nº " + str(i + 1) + " ")
+                )
+                reps.append(ns)
+            print(f"Surten un màxim de {PermR(reps)} combinacions")
         elif repe == "NO":
             print(f"Surten un màxim de {Perm(m)} combinacions")
         else:
@@ -87,7 +86,10 @@ def comb():
     if cont == "SI":
         comb()
     else:
-        pass
+        os.system("cls")
+        print("Adeu, fins la propera!")
+        time.sleep(2)
+        os.system("cls")
 
 
 comb()
