@@ -1,40 +1,8 @@
 import time as time
 import os as os
+import FuncionesComb as func
 
 os.system("cls")
-
-
-def factorial(n):
-    return 1 if (n == 1 or n == 0) else n * factorial(n - 1)
-
-
-def Perm(m):
-    return factorial(m)
-
-
-def PermR(m):
-    num = m[0]
-    perm = 0
-
-    for i in range(len(m)):
-        if i == 0:
-            pass
-        else:
-            perm += factorial(m[i])
-
-    return factorial(num) / perm
-
-
-def Var(m, n):
-    return factorial(m) / factorial(m - n)
-
-
-def VarR(m, n):
-    return m**n
-
-
-def Comb(m, n):
-    return factorial(m) / (factorial(n) * factorial(m - n))
 
 
 def comb():
@@ -52,14 +20,14 @@ def comb():
             print(" ")
 
             if repe == "SI":
-                print("Surten un màxim de " + VarR(m, n) + " combinacions")
+                print("Surten un màxim de " + func.VarR(m, n) + " combinacions")
             elif repe == "NO":
-                print(f"Surten un màxim de {Var(m, n)} combinacions")
+                print(f"Surten un màxim de {func.Var(m, n)} combinacions")
             else:
                 print("Error en la presa de resposta... \n")
                 comb()
         elif ordre == "NO":
-            print(f"Surten un màxim de {Comb(m, n)} combinacions")
+            print(f"Surten un màxim de {func.Comb(m, n)} combinacions")
         else:
             print("Error a la presa de resposta... \n")
             comb()
@@ -74,9 +42,9 @@ def comb():
                     input("Cuantas veces se repite el elemento nº " + str(i + 1) + " ")
                 )
                 reps.append(ns)
-            print(f"Surten un màxim de {PermR(reps)} combinacions")
+            print(f"Surten un màxim de {func.PermR(reps)} combinacions")
         elif repe == "NO":
-            print(f"Surten un màxim de {Perm(m)} combinacions")
+            print(f"Surten un màxim de {func.Perm(m)} combinacions")
         else:
             print("Error en la presa de resposta... \n")
             comb()
