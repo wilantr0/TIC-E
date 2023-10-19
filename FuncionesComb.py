@@ -29,3 +29,7 @@ def VarR(m, n):
 
 def Comb(m, n):
     return factorial(m) / (factorial(n) * factorial(m - n))
+
+
+print(Comb(7, 4))
+print(Comb(7, 2))
