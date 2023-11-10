@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <details open>
+    <summary>Intersecció de succesos</summary>
+    <h3>E={1, 2, 3, 4, 5, 6}</h3>
+    <code style="display: block;">
+      A = P(parell) = 3/6
+    </code>
+    <code style="display: block;">
+      B = P(m3) = 2/6
+    </code>
+    <code style="display: block;">
+      P(A∩B) = P(A)*P(B/A)
+    </code>
+
+    <img width="200px" src="./Intersecció.png" alt="">
+  </details>
+
+  <details open>
+    <summary>Unió de succesos</summary>
+    <code style="display: block;">
+        P(A∪B) = P(A)+P(B)-P(A∩B)
+      </code>
+    <img src="./Unió.png" width="200px" alt="">
+  </details>
+
+  <details open>
+    <summary>Contrari de succesos</summary>
+    <code style="display: block;">
+        P(<span class="contrari">A</span>) = 1-P(A)
+    </code>
+    <img src="./con.successió.png" width="200px" alt="">
+  </details>
+
+  <details open>
+    <summary>Contrari de intersecció</summary>
+    <code style="display: block;">
+          P(<span class="contrari">A∩B</span>) = 1-P(A∩B)
+        </code>
+    <code style="display: block;">
+          P(<span class="contrari">A</span>∪<span class="contrari">B</span>) =  P(<span class="contrari">A∩B</span>) = 1-P(A∩B)
+        </code>
+    <img src="./con.intersecció.png" width="200px" alt="">
+  </details>
+
+  <details open>
+    <summary>Contrari de unió</summary>
+    <code style="display: block;">
+          P(<span class="contrari">A∪B</span>) = 1-P(A∪B)
+        </code>
+    <code style="display: block;">
+          P(<span class="contrari">A</span>∩<span class="contrari">B</span>) =  P(<span class="contrari">A∪B</span>) = 1-P(A∪B)
+        </code>
+    <img src="./con.unió.png" width="200px" alt="">
+  </details>
+
+</body>
+
+</html>
