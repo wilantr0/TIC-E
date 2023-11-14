@@ -19,7 +19,7 @@ def simulacion(sim, alumn):
             alumnes.append(random.randint(1, 365))
         coincidencias = coincidencia(alumnes)
         counter += coincidencias
-    print(probabilidad(counter, sim))
+    print(probabilidad(counter, sim), "%")
 
 
 simulacion(10000, 23)
