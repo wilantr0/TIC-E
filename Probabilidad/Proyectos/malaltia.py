@@ -30,5 +30,5 @@ def simulador(simulacions, poblacio, percentatges):
     return probabilitat
 
 
-poblacio = crearPoblacio(1000000)
+poblacio = crearPoblacio(10000)
 print(simulador(1000, poblacio, [5, 95, 1]))
