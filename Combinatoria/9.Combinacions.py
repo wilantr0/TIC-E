@@ -14,3 +14,5 @@ print(Var(5, 2))
 
 """Tens 5 llibres de matemàtiques i 4 llibres d'història. Quantes formes diferents hi ha d'ordenar els llibres en una prestatgeria si els llibres de la mateixa matèria han d'estar junts?"""
 print(Perm(5) * Perm(4) * Perm(2))
+
+print(Comb(50, 2))
